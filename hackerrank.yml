@@ -1,0 +1,24 @@
+version: 1.0
+configuration:
+  has_webserver: false
+  readonly_paths:
+    - tests/.*
+    - .*/bin/.*
+    - .*/obj/.*
+    - .*\.Tests\.csproj$
+    - INTERVIEWER_NOTES\.md
+    - hackerrank\.yml
+  scoring:
+    command: dotnet test --logger "trx;LogFileName=test-results.trx" --verbosity quiet
+    files:
+      - test-results.trx
+  ide_config:
+    default_open_files:
+      - README.md
+      - src/ParkingLotSystem.Core/Models/Vehicle.cs
+      - src/ParkingLotSystem.Core/Services/ParkingLotService.cs
+      - tests/ParkingLotSystem.Tests/ParkingLotServiceTests.cs
+    project_menu:
+      install: dotnet restore
+      run: dotnet build
+      test: dotnet test

@@ -9,9 +9,9 @@ configuration:
     - INTERVIEWER_NOTES\.md
     - hackerrank\.yml
   scoring:
-    command: dotnet test --logger "trx;LogFileName=test-results.trx" --verbosity quiet
+    command: dotnet test --logger "junit;LogFilePath=test-results.xml" --verbosity quiet
     files:
-      - tests/ParkingLotSystem.Tests/TestResults/test-results.trx
+      - test-results.xml
   ide_config:
     default_open_files:
       - README.md

@@ -11,7 +11,7 @@ configuration:
   scoring:
     command: dotnet test --logger "trx;LogFileName=test-results.trx" --verbosity quiet
     files:
-      - test-results.trx
+      - tests/ParkingLotSystem.Tests/TestResults/test-results.trx
   ide_config:
     default_open_files:
       - README.md
